@@ -1,0 +1,5 @@
+# Start from the given alpine-based image
+FROM devopsdockeruh/simple-web-service:alpine
+
+# Use CMD to define the argument to start the server
+CMD ["server"]
