@@ -1,0 +1,17 @@
+# Start from the Ubuntu 22.04 base image
+FROM ubuntu:22.04
+
+# Update the package manager and install curl
+RUN apt update && apt install -y curl
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the script.sh file from the local machine to the container
+COPY script.sh /app/script.sh
+
+# Grant execute permissions to the script
+RUN chmod +x /app/script.sh
+
+# Set the script to run when the container starts
+CMD ["/app/script.sh"]
