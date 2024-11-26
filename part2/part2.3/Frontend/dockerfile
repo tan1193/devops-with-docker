@@ -1,0 +1,23 @@
+# Use an appropriate Node.js version
+FROM node:14
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files
+COPY . .
+
+# Expose port 5000 for the frontend
+EXPOSE 5000
+
+# Add environment variables for the backend URL
+ENV REACT_APP_BACKEND_URL=http://localhost:8080
+
+# Start the frontend server
+CMD ["npm", "start"]
