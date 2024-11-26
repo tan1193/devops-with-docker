@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  simple-web-service:
+    image: devopsdockeruh/simple-web-service
+    volumes:
+      - ./logs.txt:/usr/src/app/logs.txt
